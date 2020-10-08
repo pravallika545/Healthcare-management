@@ -1,0 +1,20 @@
+<h3>Test details</h3>
+<form #idform=ngForm (ngSubmit)=findTestById(idform) >
+
+  <div class="form-group">
+  <label>Test Id</label>
+  <input type="number" name="testid"   ngModel class="form-control">
+</div>
+  <input type="submit" value="Search" class="btn btn-success">
+</form>
+<br>
+
+<div *ngIf="test!==undefined">
+ <br> Test id is {{test.id}}
+ <br>
+  Test Name is {{test.name | uppercase }}
+ <br>
+ Center id is {{test.centerId}}
+ <br>
+
+</div>

@@ -1,0 +1,49 @@
+<form #myform=ngForm (ngSubmit)="myform.valid &&  getAppointment(myform)">
+
+  <div class="col-7">
+      <input type="number" name="appointmentId" placeholder="appointmentId"  ngModel #appointmentIdCtrl=ngModel class="form-control" >    
+  </div>
+  
+  <div *ngIf="appointmentIdCtrl.errors!=null && appointmentIdCtrl.errors.required" class="error">
+   appointmentId is required
+  </div>
+  
+ 
+  <div>
+  <input type="submit" value="Submit"  class="btn btn-primary">    
+  </div>
+  </form>
+      <br>
+
+      <div class ="container" *ngIf="appointment!==undefined">
+       <h3>Appointment Details </h3>   
+       <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">S.No</th>
+              <th scope="col">appointmentId</th>
+              <th scope="col">userId</th>
+              <th scope="col">testId</th>
+              <th scope="col">dateTime</th>
+              <th scope="col">approved</th>
+              <th scope="col">centerId</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>{{appointment.appointmentId}}</td>
+              <td>{{appointment.userId}}</td>
+              <td>{{appointment.testId}}</td>
+              <td>{{appointment.dateTime}}</td>
+              <td>{{appointment.approved}}</td>
+              <td>{{appointment.centerId}}</td>
+            </tr>
+            </tbody>
+            </table>
+      </div>
+
+
+
+

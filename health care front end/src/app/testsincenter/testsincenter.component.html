@@ -1,0 +1,42 @@
+<h3>Tests in center </h3>
+<form #idform="ngForm" (ngSubmit)=findTestsByCenterId(idform) >
+
+  <div class="form-group">
+  <label>center Id</label>
+  <input type="number" name="centerid"   ngModel class="form-control">
+</div>
+  <input type="submit" value="Search" class="btn btn-success">
+</form>
+
+<br>
+
+<table border="5">
+
+    <tr>
+     
+      <th> Test Id</th>
+      <th>Name</th> 
+      <th>Ceter Id</th>
+       
+    </tr>  
+    <tr *ngFor="let t of tests" >
+     
+      <td>
+        {{t.id}}
+      </td>
+    
+      <td>
+     {{t.name }} 
+      </td>
+
+
+      <td>
+        {{t.centerId}}
+      
+      </td>
+    
+      
+    
+    </tr>
+    </table>
+  

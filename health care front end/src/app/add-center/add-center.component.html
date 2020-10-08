@@ -1,0 +1,28 @@
+<h3>Add center</h3>
+
+<div *ngIf="errMsg==undefined" style="margin-top: 30px;">
+<form #myform=ngForm (ngSubmit)="addCenter(myform)">
+
+<div>
+    <label>Center name</label>
+    
+    <input type="text" name="centername" ngModel>    
+</div>
+
+
+
+
+<input type="submit" value="Submit" class="btn btn-primary">    
+</form>
+<br>
+
+<div *ngIf="center!=undefined" style="margin-top: 50px;" >
+    <h2>Center Added</h2>
+    {{center.centerId}}
+    {{center.name}}
+    </div>
+</div>
+
+<div *ngIf="errMsg!=undefined" class="error">
+{{errMsg}}
+</div>

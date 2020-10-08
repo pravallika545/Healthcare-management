@@ -1,0 +1,35 @@
+<h3>Tests List</h3>
+
+<div *ngIf="errMsg==undefined" style="margin-top: 30px;">
+
+<table border="5">
+
+<tr>
+  <th>Id</th>
+  <th>Name</th> 
+  <th>RemoveData</th> 
+</tr>  
+<tr *ngFor="let test of tests" >
+ 
+  <td>
+    {{test.id}}
+  </td>
+
+  <td>
+ {{test.name }} 
+</td>
+
+
+  <td>
+    <button (click)="removeTest(test.id)">Remove Test</button>
+  
+  </td>  
+
+</tr>
+</table>
+</div>
+
+
+<div *ngIf="errMsg!=undefined" style="margin-top:30px;" class="error">
+{{errMsg}}
+</div>

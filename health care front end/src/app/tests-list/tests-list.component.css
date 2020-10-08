@@ -1,0 +1,9 @@
+.eligible{
+    background-color: green;
+    color: white;
+}
+
+.notEligible{
+    background-color: red;
+    color: white;
+}

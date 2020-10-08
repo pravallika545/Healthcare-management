@@ -1,0 +1,77 @@
+<form #myform=ngForm (ngSubmit)="myform.valid &&  makeAppointment(myform)">
+
+    <div class="col-7">
+        <input type="number" name="userId" placeholder="userId"  ngModel #userIdCtrl=ngModel class="form-control" >    
+    </div>
+    
+    <div *ngIf="userIdCtrl.errors!=null && userIdCtrl.errors.required" class="error">
+     userId is required
+    </div>
+    
+    <div class="col-7">
+        <input type="number" name="testId" placeholder="testId"  ngModel #testCtrl=ngModel class="form-control" >    
+    </div>
+    
+    <div *ngIf="testCtrl.errors!=null && testCtrl.errors.required" class="error">
+     testId is required
+    </div>
+
+    <div class="col-7">
+        <input type="any" name="dateTime" placeholder="dateTime"  ngModel #dateTimeCtrl=ngModel class="form-control" >    
+    </div>
+    
+    <div *ngIf="dateTimeCtrl.errors!=null && dateTimeCtrl.errors.required" class="error">
+     dateTime is required
+    </div>
+
+    <div class="col-7">
+        <input type="any" name="approved" placeholder="approved"  ngModel #approvedCtrl=ngModel class="form-control" >    
+    </div>
+    
+    <div *ngIf="approvedCtrl.errors!=null && approvedCtrl.errors.required" class="error">
+     approved is optional
+    </div>
+
+    <div class="col-7">
+      <input type="number" name="centerId" placeholder="centerId"  ngModel #centerIdCtrl=ngModel class="form-control" >    
+ 
+    </div>
+  
+  
+    <div *ngIf="centerIdCtrl.errors!=null && centerIdCtrl.errors.required" class="error">
+      centerId is required
+    </div>
+    
+    <div>
+    <input type="submit" value="Submit"  class="btn btn-primary">    
+    </div>
+    </form>
+        <br>
+        
+        <div class ="container" *ngIf="appointment!==undefined">
+         <h3>Appointment added </h3>   
+         <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">appointmentId</th>
+                <th scope="col">userId</th>
+                <th scope="col">testId</th>
+                <th scope="col">dateTime</th>
+                <th scope="col">approved</th>
+                <th scope="col">centerId</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>{{appointment.appointmentId}}</td>
+                <td>{{appointment.userId}}</td>
+                <td>{{appointment.testId}}</td>
+                <td>{{appointment.dateTime}}</td>
+                <td>{{appointment.approved}}</td>
+                <td>{{appointment.centerId}}</td>
+              </tr>
+              </tbody>
+              </table>
+        </div>
